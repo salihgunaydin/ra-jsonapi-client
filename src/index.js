@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 import { stringify } from 'qs';
 import merge from 'deepmerge';
 import axios from 'axios';
