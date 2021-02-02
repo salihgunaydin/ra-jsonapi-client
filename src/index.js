@@ -142,9 +142,8 @@ export default (apiUrl, userSettings = {}) => (type, resource, params) => {
       if ([GET_LIST, GET_MANY, GET_MANY_REFERENCE].includes(type)) {
         // When meta data and the 'total' setting is provided try
         // to get the total count.
-        if (response.meta && settings.total) {
-          total = getValue(response.meta, settings.total);
-          // total = response.data.meta[settings.total];
+        if (response.data.meta && settings.total) {
+          total = getValue(response.data.meta, settings.total);
         }
 
         // Use the length of the data array as a fallback.
