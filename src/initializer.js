@@ -32,11 +32,15 @@ export default () => {
   axios.interceptors.response.use(
     response => response,
     (error) => {
-      const { status, data } = error.response;
+      const { status, statusText, data } = error.response;
 
       if (status < 200 || status >= 300) {
         return Promise.reject(
-          new HttpError(data, status),
+          new HttpError(
+            statusText,
+            status,
+            data,
+          ),
         );
       }
 
