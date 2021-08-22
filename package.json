@@ -1,7 +1,7 @@
 {
   "name": "ra-jsonapi-client-with-delete-many",
-  "version": "0.0.1",
-  "description": "JSON API data provider for react-admin. Added DELETE_MANY action and path support for total count.",
+  "version": "0.0.3",
+  "description": "JSON API data provider for react-admin. Added DELETE_MANY/UPDATE_MANY actions and path support for total count.",
   "main": "build/index.js",
   "scripts": {
     "build": "babel ./src -d ./build",

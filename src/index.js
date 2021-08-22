@@ -7,6 +7,7 @@ import {
   GET_ONE,
   CREATE,
   UPDATE,
+  UPDATE_MANY,
   DELETE,
   DELETE_MANY,
   GET_MANY,
@@ -93,6 +94,20 @@ export default (apiUrl, userSettings = {}) => (type, resource, params) => {
 
       options.method = settings.updateMethod;
       options.data = JSON.stringify(data);
+      break;
+    }
+
+    case UPDATE_MANY: {
+      url = `${apiUrl}/${resource}`;
+
+      const data = {
+        ids: params.ids,
+        data: params.data,
+      };
+
+      options.method = settings.updateMethod;
+      options.data = JSON.stringify(data);
+
       break;
     }
 
@@ -219,6 +234,7 @@ export default (apiUrl, userSettings = {}) => (type, resource, params) => {
           };
         }
 
+        case UPDATE_MANY:
         case DELETE_MANY: {
           return {
             data: params.ids,
