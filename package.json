@@ -3,6 +3,7 @@
   "version": "0.10.0",
   "description": "JSON API data provider for react-admin. Added DELETE_MANY/UPDATE_MANY actions and path support for total count.",
   "main": "build/index.js",
+  "packageManager": "npm@10.8.1",
   "scripts": {
     "build": "babel ./src -d ./build",
     "test": "mocha --require mock-local-storage --require @babel/register test/index.js",
@@ -43,7 +44,7 @@
   },
   "dependencies": {
     "ansi-regex": "*",
-    "axios": "^0.21.1",
+    "axios": "^1.11.0",
     "deepmerge": "^2.1.1",
     "qs": "^6.5.2"
   }
