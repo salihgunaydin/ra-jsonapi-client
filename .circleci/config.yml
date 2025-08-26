@@ -6,8 +6,7 @@ orbs:
 jobs:
   build-and-test:
     docker:
-      # Use a maintained LTS image (Node 18 or 20). Node 15 is EOL.
-      - image: cimg/node:20.12
+      - image: cimg/node:22.18
     steps:
       - checkout
       # Install dependencies using npm (with caching handled by the orb)
