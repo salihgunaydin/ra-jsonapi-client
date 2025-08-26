@@ -1,9 +1,22 @@
 # ra-jsonapi-client
-[![Build Status](https://travis-ci.org/henvo/ra-jsonapi-client.svg?branch=master)](https://travis-ci.org/henvo/ra-jsonapi-client)
+[![CircleCI](https://circleci.com/gh/henvo/ra-jsonapi-client/tree/master.svg?style=svg)](https://circleci.com/gh/henvo/ra-jsonapi-client/tree/master)
 [![npm version](https://badge.fury.io/js/ra-jsonapi-client.svg)](https://badge.fury.io/js/ra-jsonapi-client)
 
 A JSONAPI compatible data provider for
 [react-admin](https://github.com/marmelab/react-admin).
+
+## Deprecation notice
+This project has been a lot of fun and has taught me how exciting and enjoyable
+developing open source software can be. I hope that with this project I have
+been able to contribute a little to spreading the idea of open source software
+and giving something back to the community.
+
+We are constantly evolving, just like our software – and sometimes you have to
+have the courage to draw a line under things. As I no longer use JSONAPI for my
+projects and interest in the repository has declined over the last few years,
+this repository will be archived on 5 August 2025.
+
+Many thanks to all contributors and users who have given this project a star.
 
 
 ## Features
@@ -101,8 +114,8 @@ const settings = {
 The default value is:
 ``` javascript
 {
-  Accept: 'application/vnd.api+json; charset=utf-8',
-  'Content-Type': 'application/vnd.api+json; charset=utf-8',
+  Accept: 'application/vnd.api+json',
+  'Content-Type': 'application/vnd.api+json',
 }
 ```
 
@@ -150,7 +163,22 @@ This package makes usage of the aweseome `qs` querystring parsing library.
 Default: `brackets`
 Options: `indices`, `repeat`, `comma`
 
+### Key for `GET_MANY` filter
+In most cases `filter[id]` is enough for get many operation.
+But it is not a specification of JSONAPI.
+You can change this key `id` to any string.
+
+``` javascript
+{
+  // When your api requires filter[id_in] for get many operation.
+  getManyKey: 'id_in'
+}
+```
+
+Default: `id`
+
 ## Contributors
 * [TMiguelT](https://github.com/TMiguelT)
 * [hootbah](https://github.com/hootbah)
 * [770studio](https://github.com/770studio)
+* [foxeg](https://github.com/foxeg)

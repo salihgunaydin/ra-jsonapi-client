@@ -1,11 +1,12 @@
 {
   "name": "ra-jsonapi-client-with-delete-many",
-  "version": "0.0.5",
+  "version": "0.10.0",
   "description": "JSON API data provider for react-admin. Added DELETE_MANY/UPDATE_MANY actions and path support for total count.",
   "main": "build/index.js",
   "scripts": {
     "build": "babel ./src -d ./build",
-    "test": "nyc mocha --require babel-core/register --require mock-local-storage",
+    "test": "mocha --require mock-local-storage --require @babel/register test/index.js",
+    "coverage": "nyc npm run test",
     "lint": "eslint ./src",
     "prepublishOnly": "npm run build"
   },
@@ -18,22 +19,24 @@
     "jsonapi",
     "npm"
   ],
-  "author": "Henning Vogt <git@henvo.de>",
+  "author": "Henning Vogt <henning@vogt.family>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/henvo/ra-jsonapi-client/issues"
   },
   "homepage": "https://github.com/henvo/ra-jsonapi-client#readme",
   "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-plugin-transform-object-rest-spread": "^6.26.0",
-    "babel-preset-env": "^1.7.0",
+    "@babel/cli": "^7.15.7",
+    "@babel/core": "^7.15.5",
+    "@babel/plugin-proposal-object-rest-spread": "^7.15.6",
+    "@babel/preset-env": "^7.15.6",
+    "@babel/register": "^7.15.3",
     "chai": "^4.2.0",
     "chai-as-promised": "^7.1.1",
     "eslint": "^5.5.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.14.0",
-    "mocha": "^9.1.0",
+    "mocha": "^9.1.1",
     "mock-local-storage": "^1.1.7",
     "nock": "^10.0.0",
     "nyc": "^15.1.0"
